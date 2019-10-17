@@ -20,7 +20,7 @@ public class Brief2 {
 
         // choix de l'utilisateur
         int choice = 0;
-        // les différentes options sont proposées tant que l'utilsateur n'a pas fait le choix de quitter (choix 5)
+        // les différentes options sont proposées tant que l'utilisateur n'a pas fait le choix de quitter (choix 5)
         do {
             try {
                 // menu
@@ -32,7 +32,7 @@ public class Brief2 {
                 System.out.println("3. Supprimer un fichier");
                 System.out.println("4. Afficher des informations sur un livre");
                 System.out.println("5. Quitter le programme");
-                System.out.println("Saisissez votre choix (1 ou 2 ou 3 ou 4 ou 5) : ");
+                System.out.println("-> Saisissez votre choix (1 ou 2 ou 3 ou 4 ou 5) : ");
                 //
                 // prise en compte et traitement du choix de l'utilisateur
                 Scanner sc = new Scanner(System.in); // lecture depuis l'entrée standard (clavier)
@@ -42,7 +42,7 @@ public class Brief2 {
                     // choix 1 : liste des fichiers
                     case 1: {
                         // choix 1 : cas de la liste vide
-                        if (theFiles.isEmpty() == true) {
+                        if (theFiles.isEmpty()) {
                             System.out.println("La liste est vide");
                         }
                         // choix 1 : cas de la liste non vide
@@ -60,7 +60,7 @@ public class Brief2 {
                         sc.nextLine();
                         String nameToAdd = sc.nextLine();
                         // choix 2 : fichier à ajouter existant ou inexistant
-                        if (theFiles.contains(nameToAdd) == true) {
+                        if (theFiles.contains(nameToAdd)) {
                             System.out.println("Ce fichier existe déjà");
                         } else {
                             theFiles.add(nameToAdd);
@@ -74,7 +74,7 @@ public class Brief2 {
                         sc.nextLine();
                         String nameToRemove = sc.nextLine();
                         // choix 3 : fichier à supprimer existant ou inexistant
-                        if (theFiles.contains(nameToRemove) == false) {
+                        if (!theFiles.contains(nameToRemove)) {
                             System.out.println("Ce fichier n'existe pas");
                         } else {
                             theFiles.remove(nameToRemove);
@@ -87,7 +87,7 @@ public class Brief2 {
                         //Liste des fichiers
                         System.out.println("Liste des fichiers : ");
                         // Liste vide
-                        if (theFiles.isEmpty() == true) {
+                        if (theFiles.isEmpty()) {
                             System.out.println("La liste est vide");
                         }
                         // Liste non vide
@@ -99,20 +99,19 @@ public class Brief2 {
                             sc.nextLine();
                             String nameSelected = sc.nextLine();
                             // choix 4 : fichier sélectionné existant ou inexistant
-                            if (theFiles.contains(nameSelected) == false) {
+                            if (!theFiles.contains(nameSelected)) {
                                 System.out.println("Ce fichier n'existe pas");
                             } else {
                                 System.out.println("Statistiques pour le fichier " + nameSelected + " : ");
                                 // création d'une hashmap destinée à contenir les mots distincts dans le fichier et, pour chaque mot, le nombre total d'occurrences dans le fichier
-                                // si la hashmap n'est pas vide, affichage du nombre de mots distincts ou du nombre total de mots,
-                                // au choix de l'utilisateur
+                                // si la hashmap n'est pas vide, affichage du nombre de mots distincts ou du nombre total de mots, au choix de l'utilisateur
                                 HashMap<String, Integer> hash = fillHash(nameSelected);
-                                if (hash.isEmpty() == false) {
+                                if (!hash.isEmpty()) {
                                     int choice4 = 0;
                                     try {
                                         System.out.println("1. Afficher le nombre de lignes du fichier");
                                         System.out.println("2. Afficher le nombre de mots différents du fichier");
-                                      // sc.nextLine();
+                                        // sc.nextLine();
                                         choice4 = sc.nextInt();
                                         switch (choice4) {
                                             case 1: {
@@ -139,7 +138,7 @@ public class Brief2 {
                     // choix 5 : quitter le programme
                     case 5: {
                         System.out.println("A bientôt ...");
-
+                        break;
                     }
                     //
                     // choix saisi numérique mais non compris entre 1 et 5
