@@ -15,12 +15,7 @@ Ensuite, il doit présenter le menu suivant :
 4. Afficher des informations sur un livre 
 5. Quitter le programme.
 
-Le choix 4 :
-affiche la liste des fichiers, 
-propose de choisir d'un de ces fichiers, 
-propose le sous-menu suivant : 
-    1. Afficher le nombre de lignes du fichier, 
-    2. Afficher le nombre de mots différents du fichier
+Le choix 4 : affiche la liste des fichiers, propose de choisir d'un de ces fichiers, propose le sous-menu suivant : 1. Afficher le nombre de lignes du fichier, 2. Afficher le nombre de mots différents du fichier
 
 Pendant toute l'exécution du programme, celui-ci maintient une liste des noms de fichiers, initialisée par les arguments du programme, qu'il est possible de consulter et modifier avec les trois premières options.
 
