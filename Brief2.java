@@ -105,11 +105,11 @@ public class Brief2 {
                                 // si le fichier existe
                                 // création d'une hashmap destinée à contenir les mots distincts dans le fichier et, pour chaque mot, le nombre total d'occurrences dans le fichier
                                 // si la hashmap n'est pas vide, affichage du nombre de mots distincts ou du nombre total de mots, au choix de l'utilisateur
-                                System.out.println("Statistiques pour le fichier " + nameSelected + " : ");
                                 HashMap<String, Integer> hash = fillHash(nameSelected);
                                 if (!hash.isEmpty()) {
                                     int choice4 = 0;
                                     try {
+                                        System.out.println("Statistiques pour le fichier " + nameSelected + " : ");
                                         System.out.println("1. Afficher le nombre de lignes du fichier");
                                         System.out.println("2. Afficher le nombre de mots différents du fichier");
                                         // sc.nextLine();
@@ -130,6 +130,8 @@ public class Brief2 {
                                     } catch (InputMismatchException s) {
                                         System.out.println("Votre saisie est incorrecte.");
                                     }
+                                } else {
+                                    System.out.println("Le fichier est vide");
                                 }
                             }
                             break;
