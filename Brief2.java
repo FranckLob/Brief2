@@ -102,9 +102,10 @@ public class Brief2 {
                             if (!theFiles.contains(nameSelected)) {
                                 System.out.println("Ce fichier n'existe pas");
                             } else {
-                                System.out.println("Statistiques pour le fichier " + nameSelected + " : ");
+                                // si le fichier existe
                                 // création d'une hashmap destinée à contenir les mots distincts dans le fichier et, pour chaque mot, le nombre total d'occurrences dans le fichier
                                 // si la hashmap n'est pas vide, affichage du nombre de mots distincts ou du nombre total de mots, au choix de l'utilisateur
+                                System.out.println("Statistiques pour le fichier " + nameSelected + " : ");
                                 HashMap<String, Integer> hash = fillHash(nameSelected);
                                 if (!hash.isEmpty()) {
                                     int choice4 = 0;
